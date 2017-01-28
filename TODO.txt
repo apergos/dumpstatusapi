@@ -1,0 +1,3 @@
+* I hate the blah_retrieve* names, they suck. Fix.
+* Catch specific exception when bad params are passed (no such wiki,
+  no dump on that date, no such job) so we can tell the user.

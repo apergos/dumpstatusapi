@@ -1,0 +1,20 @@
+server {
+    # for a public HTTP server:
+    listen 80;
+    # for a public HTTPS server:
+    # listen 443 ssl;
+    server_name localhost dumpstatus.local;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/srv/dumpstatus/uwsgi.sock;
+    }
+
+    location /static {
+        alias /srv/dumpstatus/static;
+    }
+
+    location /favicon.ico {
+        alias /srv/dumpstatus/static/favicon.ico;
+    }
+}

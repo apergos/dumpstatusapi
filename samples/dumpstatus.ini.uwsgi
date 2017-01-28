@@ -1,0 +1,11 @@
+[uwsgi]
+socket = /srv/dumpsapi/uwsgi.sock
+chmod-socket = 775
+master = true
+wsgi-file = /srv/dumpsapi/src/dumpsapi.py
+uid = uwsgi
+gid = nginx
+processes = 1
+threads = 1
+plugins = python,logfile
+logger = file:/srv/dumpsapi/uwsgi.log
